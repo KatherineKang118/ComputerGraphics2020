@@ -5,7 +5,7 @@ void ofApp::setup(){
 
 	ofBackground(0);
 
-	int numBalls = 30;
+	int numBalls = 7;
 
 	// fill our vector
 	for (int i = 0; i < numBalls; i++) {		// loop 30 times

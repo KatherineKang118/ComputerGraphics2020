@@ -26,6 +26,6 @@ public:
     Ball ball2;
     Ball ball3;
     
-    ofVec2f gravity;
+    ofVec2f wind;
 		
 };

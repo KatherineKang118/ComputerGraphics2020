@@ -16,10 +16,10 @@ void ofApp::setup(){
     ofSetCircleResolution(100);
     ofEnableSmoothing();
     ofEnableAlphaBlending();
-    ofBackground(255);
+    ofBackground(0);
     
     for (int i = 0; i<NUM_MOVER; i++) {
-        movers[i].setup(ofRandom(0.1,4), 0, 0);
+        movers[i].setup(ofRandom(0.1,2), 0, 0);
     }
 
 }
@@ -27,13 +27,13 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     
+    float wwind=ofRandom(0,0.5);
+    ofPoint wind(wwind, wwind);
     
-    ofPoint wind(0.01, 0);
-    ofPoint gravity(0, 0.1);
     
     for (int i = 0; i<NUM_MOVER; i++) {
         movers[i].applyForce(wind);
-        movers[i].applyForce(gravity);
+       
         
         movers[i].update();
         movers[i].checkEdges();

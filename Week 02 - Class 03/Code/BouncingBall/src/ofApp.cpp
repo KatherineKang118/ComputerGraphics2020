@@ -5,7 +5,7 @@ void ofApp::setup(){
 
 	ofBackground(0);
     
-    gravity = ofVec2f(0,0); // start with no gravity force
+    wind = ofVec2f(0,0); // start with no gravity force
 	
 }
 
@@ -13,13 +13,13 @@ void ofApp::setup(){
 void ofApp::update(){
     
     // mouse position alters gravity
-    gravity.x = ofMap(ofGetMouseX(), 0, ofGetWidth(), -1, 1);
-    gravity.y = ofMap(ofGetMouseY(), 0, ofGetHeight(), -1, 1);
+    wind.x = ofMap(ofGetMouseX(), 0, ofGetWidth(), 1, -1);
+    wind.y = ofMap(ofGetMouseY(), 0, ofGetHeight(), 1, -1);
 
 
-	ball1.update(gravity); // apply gravity to balls
-	ball2.update(gravity);
-	ball3.update(gravity);
+        ball1.update(wind); // apply gravity to balls
+        ball2.update(wind);
+        ball3.update(wind);
 
 }
 

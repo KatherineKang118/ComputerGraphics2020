@@ -10,7 +10,7 @@ Ball::Ball() {
 
 	// random color
 	float red	= ofRandom(0,255);
-	float green	= ofRandom(0,255);		
+	float green	= ofRandom(0,20);		
 	float blue	= ofRandom(0,255);
 	color = ofColor(red, green, blue);
 
@@ -38,22 +38,22 @@ void Ball::update(ofVec2f force) {
 	// check left
 	if (pos.x <= radius) {
 		pos.x = radius;			// set the position back to the edge of window
-		dir.x = -.7 * dir.x;		// and reverse direction
+		dir.x = -.07 * dir.x;		// and reverse direction
 	}
 	// check right
 	else if (pos.x >= ofGetWidth() - radius) {
 		pos.x = ofGetWidth() - radius;			// similar to above
-		dir.x = -.7 * dir.x; // slow down
+		dir.x = -.07 * dir.x; // slow down
 	}
 
 	// check top and bottom
 	if (pos.y <= radius) {
 		pos.y = radius;
-		dir.y = -.7 * dir.y;
+		dir.y = -.07 * dir.y;
 	}
 	else if (pos.y >= ofGetHeight() - radius) {
 		pos.y = ofGetHeight() - radius;
-		dir.y = -.7 * dir.y;
+		dir.y = -.07 * dir.y;
 	}
 }
 

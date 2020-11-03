@@ -24,12 +24,12 @@ void mover::applyForce(ofPoint force){
 void mover::update(){
     velocity += acceleration;
     location += velocity;
-    acceleration *= 0;
+    acceleration *= 1;
 }
 
 void mover::display(){
-
-    ofSetColor(0,40);
+    float ccolor=ofRandom(50,200);
+    ofSetColor(ccolor,0,ccolor,40);
     ofDrawCircle(location.x, location.y, mass*8);
 
 }
